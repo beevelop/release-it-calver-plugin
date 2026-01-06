@@ -1,11 +1,10 @@
 {
-  "name": "@csmith/release-it-calver-plugin",
+  "name": "release-it-calver-plugin",
   "version": "2023.12.0",
   "description": "Calender Versioning (calver) plugin for Release It!",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcovonly mocha **/*-tests.js --timeout 10000",
-    "release": "release-it -- --ci"
+    "test": "nyc --reporter=text --check-coverage --lines 80 --functions 80 --branches 80 mocha **/*-tests.js --timeout 10000"
   },
   "repository": {
     "type": "git",
@@ -38,27 +37,10 @@
   },
   "devDependencies": {
     "nyc": "^17.1.0",
-    "release-it": "^19.2.2",
     "chai": "^6.2.2",
     "mocha": "^11.7.5"
   },
   "peerDependencies": {
     "release-it": "^19.0.0"
-  },
-  "release-it": {
-    "git": {
-      "requireCleanWorkingDir": false
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": false
-    },
-    "plugins": {
-      "./index.js": {
-        "format": "yyyy.mm.minor"
-      }
-    }
   }
 }
