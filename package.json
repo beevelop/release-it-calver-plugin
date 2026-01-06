@@ -31,7 +31,7 @@
   "homepage": "https://github.com/beevelop/release-it-calver-plugin#readme",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
     "calver": "^22.9.1"
