@@ -1,20 +1,30 @@
 # release-it-calver-plugin
 
-## Calender Versioning (calver) plugin for Release It!
+> NOTE: This repository is a maintenance fork focused on reducing CVEs and keeping dependencies and CI up-to-date. No new features will be added in this fork.
 
-[![codecov](https://codecov.io/gh/casmith/release-it-calver-plugin/branch/master/graph/badge.svg?token=HKW5RKSQYW)](https://codecov.io/gh/casmith/release-it-calver-plugin)
+## Calender Versioning (calver) plugin for Release It!
 
 This plugin enables Calendar Versioning (calver) with Release It! This is especially useful for application projects in a continuous delivery environment. 
 
-```
-npm install --save-dev @csmith/release-it-calver-plugin
+### Installation
+
+This package is not published to npm. Install directly from GitHub:
+
+```bash
+# Install from GitHub (recommended)
+npm install --save-dev beevelop/release-it-calver-plugin
+
+# Or using the full git URL:
+npm install --save-dev git+https://github.com/beevelop/release-it-calver-plugin.git
 ```
 
-In [release-it](https://github.com/release-it/release-it) config:
+### Configuration
+
+In your [release-it](https://github.com/release-it/release-it) config:
 
 ```json
 "plugins": {
-  "@csmith/release-it-calver-plugin": {
+  "release-it-calver-plugin": {
     "format": "yyyy.mm.minor",
     "increment": "calendar"
   }
@@ -55,3 +65,18 @@ In [release-it](https://github.com/release-it/release-it) config:
 ```
 
 More information on available format tags can be found here: [calver](https://github.com/muratgozel/node-calver)
+
+## Releasing
+
+- Releases should be performed from the `main` branch.
+- This package is **not** published to npm; releases are GitHub-only.
+- To create a release locally, run:
+
+```bash
+# ensure you're on main and working tree is clean
+git checkout main
+git pull --ff-only
+
+# run the release command
+npm run release
+```

@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/casmith/release-it-calver-plugin.git"
+    "url": "git+https://github.com/beevelop/release-it-calver-plugin.git"
   },
   "keywords": [
     "release",
@@ -26,21 +26,24 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/casmith/release-it-calver-plugin/issues"
+    "url": "https://github.com/beevelop/release-it-calver-plugin/issues"
   },
-  "homepage": "https://github.com/casmith/release-it-calver-plugin#readme",
+  "homepage": "https://github.com/beevelop/release-it-calver-plugin#readme",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "calver": "^22.9.1",
-    "chai": "^5.0.0",
-    "mocha": "^10.2.0"
+    "calver": "^22.9.1"
   },
   "devDependencies": {
-    "nyc": "^15.1.0",
-    "release-it": "^17.0.0"
+    "nyc": "^17.1.0",
+    "release-it": "^19.2.2",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5"
   },
   "peerDependencies": {
-    "release-it": "^17.0.0"
+    "release-it": "^19.0.0"
   },
   "release-it": {
     "git": {
@@ -50,7 +53,7 @@
       "release": true
     },
     "npm": {
-      "publish": true
+      "publish": false
     },
     "plugins": {
       "./index.js": {
